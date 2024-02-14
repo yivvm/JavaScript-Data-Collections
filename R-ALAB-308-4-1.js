@@ -60,3 +60,19 @@ becomes
 
  */
 
+const csvParsed = (csvString) => {
+    const rows = csvString.split('\n');
+    // console.log(rows)
+
+    const csvList = []
+    rows.forEach(row => {
+        const parsed = row.split(',');
+        csvList.push(parsed)
+    })
+    
+    console.log(csvList);
+}
+
+const testString = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
+
+csvParsed(testString);
