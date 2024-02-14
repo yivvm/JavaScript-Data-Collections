@@ -10,17 +10,17 @@ If a number is not divisible by either 3 or 5, log the number.
 Remember to commit your solution once it is working.
 */
 
-// for (let i = 1; i <= 100; i++) {
-//     if (i % 3 === 0 && i % 5 !== 0) {
-//         console.log('Fizz');
-//     } else if (i % 5 === 0 && i % 3 !== 0) {
-//         console.log('Buzz');
-//     } else if (i % 3 === 0 && i % 5 === 0) {
-//         console.log('Fizz Buzz');
-//     } else {
-//         console.log(i);
-//     }
-// }
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 !== 0) {
+        console.log('Fizz');
+    } else if (i % 5 === 0 && i % 3 !== 0) {
+        console.log('Buzz');
+    } else if (i % 3 === 0 && i % 5 === 0) {
+        console.log('Fizz Buzz');
+    } else {
+        console.log(i);
+    }
+}
 
 
 
@@ -36,20 +36,20 @@ Continuing with the example above, if n is equal to 4, your loop should log 5. S
 Be careful! If you set n to a number too large, your loop could take a long time to process.
 */
 
-// let isPrime = false;
-// let n = 15;
+let isPrime = false;
+let n = 15;
 
-// while (isPrime === false) {
-//     isPrime = true;
-//     n++;
-//     for (let i = 2; i*i <= n; i++) {
-//         if (n % i === 0) {
-//             isPrime = false;
-//             break;
-//         }
-//     }
-// }
-// console.log(n);
+while (isPrime === false) {
+    isPrime = true;
+    n++;
+    for (let i = 2; i*i <= n; i++) {
+        if (n % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+}
+console.log(n);
 
 
 
