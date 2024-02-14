@@ -167,13 +167,20 @@ transformedList.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
 
 console.log(transformedList)
 
-const totalAge = (transformedList) => {
-    let totalAge = 0;
-    for (k = 0; k < transformedList.length; k++) {
-        totalAge += Number(transformedList[k].age);
-    }
+// Solution 1: --------
+// const totalAge = (transformedList) => {
+//     let totalAge = 0;
+//     for (k = 0; k < transformedList.length; k++) {
+//         totalAge += Number(transformedList[k].age);
+//     }
 
-    return totalAge;
-}
+//     return totalAge;
+// }
+// console.log(totalAge(transformedList))
 
-console.log(totalAge(transformedList))
+// Solution 2: ----------
+let totalAge = 0;
+transformedList.forEach(item => {
+    totalAge += Number(item.age);
+})
+console.log(totalAge)
