@@ -112,11 +112,14 @@
 
     const transform = (cvsParsedList) => {
         // store the keys
-        const keys = [];
-        cvsParsedList[0].forEach(key => {
-            key = key.toLowerCase();
-            keys.push(key);
-        })
+        // solution 1: ----
+        // const keys = [];
+        // cvsParsedList[0].forEach(key => {
+        //     key = key.toLowerCase();
+        //     keys.push(key);
+        // })
+        // solution 2: ------
+        const keys = cvsParsedList[0].map(key => key.toLowerCase());
         // console.log(keys);
 
         const transformList = [];
@@ -129,8 +132,9 @@
             transformList.push(object);
         }
 
-        // return transformList;
-        console.log(transformList);
+        return transformList;
+        // console.log(transformList);
     }
 
-    transform(cvsParsedList);
+    const transformedList = transform(cvsParsedList);
+    console.log(transformedList);
