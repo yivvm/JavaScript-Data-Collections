@@ -184,3 +184,49 @@ transformedList.forEach(item => {
     totalAge += Number(item.age);
 })
 console.log(totalAge)
+
+
+
+
+/*
+Part 5: Full Circle
+As a final task, transform the final set of data back into CSV format.
+*/
+
+const backToCVS = (parsedList) => {
+    // get the first row of CVS
+    const list0 = Object.keys(parsedList[0])
+    let list0Up = []
+    list0.forEach(item => {
+        let itemU;
+        if (item === 'id') {
+            itemU = 'ID'
+        } else {
+            itemU = item.charAt(0).toUpperCase() + item.slice(1);
+        }
+        list0Up.push(itemU)
+    })
+    // console.log(list0Up)
+
+    // create the list for the whole CVS
+    const listCVS = [list0Up];
+    // console.log(listCVS);
+
+    // convert object's items to list of list
+    parsedList.forEach(item => {
+        listCVS.push(Object.values(item))
+    })
+    // console.log(listCVS)
+
+    // generate CVS from listCVS
+    cvsStringAgain = "";
+    listCVS.forEach(item => {
+        cvsStringAgain += item.join(',') + '\\n' 
+    })
+
+    return cvsStringAgain.slice(0,-2);
+}
+
+const cvsFormat = backToCVS(transformedList);
+console.log(cvsFormat)
+// console.log(cvsFormat == testString)
