@@ -69,10 +69,13 @@ const csvParsed = (csvString) => {
         const parsed = row.split(',');
         csvList.push(parsed)
     })
-    
+
     console.log(csvList);
 }
 
-const testString = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
+const testString = "ID,Name,Occupation,Age,Gender,Zipcode,City,State\n42,Bruce,Knight,41,Male,93546,Mammoth Lake,CA\n57,Bob,Fry Cook,19,Male,84060,Park City,UT\n63,Blaine,Quiz Master,58,Male,81611,Aspen,CO\n98,Bill,Doctor’s Assistant,26,Male,05751,Killington,VT"
 
 csvParsed(testString);
+
+
+
