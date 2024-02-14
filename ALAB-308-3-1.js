@@ -83,5 +83,5 @@ console.log(rows)
 
 for (let i = 0; i < rows.length; i++) {
     const eachRow = rows[i].split(',');
-    console.log(eachRow)
+    console.log(eachRow.join(' '))
 }
