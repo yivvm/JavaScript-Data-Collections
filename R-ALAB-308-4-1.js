@@ -73,9 +73,34 @@ const csvParsed = (csvString) => {
     console.log(csvList);
 }
 
-const testString = "ID,Name,Occupation,Age,Gender,Zipcode,City,State\n42,Bruce,Knight,41,Male,93546,Mammoth Lake,CA\n57,Bob,Fry Cook,19,Male,84060,Park City,UT\n63,Blaine,Quiz Master,58,Male,81611,Aspen,CO\n98,Bill,Doctor’s Assistant,26,Male,05751,Killington,VT"
+const testString = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
 
-csvParsed(testString);
+// const testString = "ID,Name,Occupation,Age,Gender,Zipcode,City,State\n42,Bruce,Knight,41,Male,93546,Mammoth Lake,CA\n57,Bob,Fry Cook,19,Male,84060,Park City,UT\n63,Blaine,Quiz Master,58,Male,81611,Aspen,CO\n98,Bill,Doctor’s Assistant,26,Male,05751,Killington,VT"
+
+// csvParsed(testString);
 
 
 
+/* 
+Part 3: Transforming Data
+For each row of data in the result array produced by your code above, create an object where the key of each value is the heading for that value’s column.
+Convert these keys to all lowercase letters for consistency.
+Store these objects in an array, in the order that they were originally listed.
+Since the heading for each column will be stored in the object keys, you do not need to create an object for the heading row itself.
+For instance, the results of the example data above being passed through this step are as follows:
+[["ID", "Name", "Occupation", "Age"],
+ ["42", "Bruce", "Knight", "41"],
+ ["57", "Bob", "Fry Cook", "19"],
+ ["63", "Blaine", "Quiz Master", "58"],
+ ["98", "Bill", "Doctor’s Assistant", "26"]]
+becomes
+[{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+ { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+ { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+ { id: "98", name: "Bill", occupation: "Doctor’s Assistant", age: "26" }]
+ */
+
+const cvsParsedList = csvParsed(testString);
+
+const keys = cvsParsedList[0];
+// console.log(keys);
